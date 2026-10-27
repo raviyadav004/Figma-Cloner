@@ -1,0 +1,557 @@
+#editor-app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 360px;
+  flex-direction: column;
+  overflow: hidden;
+  background: #18181e;
+  color: #e9e7f0;
+  font-family: "DM Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  user-select: none;
+}
+
+#editor-app #topbar {
+  z-index: 10;
+  display: flex;
+  min-height: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+  border-bottom: 1px solid #30303a;
+  background: #202027;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+#editor-app #body {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+#editor-app #left-toolbar {
+  z-index: 4;
+  display: flex;
+  width: 54px;
+  flex: 0 0 54px;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 0;
+  border-right: 1px solid #30303a;
+  background: #202027;
+}
+
+#editor-app #workspace {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+  background: #191920;
+}
+
+#editor-app #viewport {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+  background-color: #191920;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.075) 0.8px, transparent 0.8px);
+  background-size: 20px 20px;
+  cursor: default;
+}
+
+#editor-app #canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#editor-app #viewport.tool-rectangle,
+#editor-app #viewport.tool-ellipse,
+#editor-app #viewport.tool-line,
+#editor-app #viewport.tool-freeform,
+#editor-app #viewport.tool-frame,
+#editor-app #viewport.tool-text {
+  cursor: crosshair;
+}
+
+#editor-app #viewport.panning {
+  cursor: grabbing;
+}
+
+#editor-app #viewport.space-down {
+  cursor: grab;
+}
+
+#editor-app #status-bar {
+  display: flex;
+  min-height: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  align-items: center;
+  padding: 0 13px;
+  border-top: 1px solid #30303a;
+  background: #202027;
+  color: #9994a8;
+  font-size: 10px;
+}
+
+#editor-app #right-panel {
+  display: flex;
+  width: 274px;
+  min-width: 240px;
+  flex: 0 0 274px;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 1px solid #30303a;
+  background: #202027;
+}
+
+#editor-app ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#editor-app ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#editor-app ::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 99px;
+  background: #494451;
+  background-clip: padding-box;
+}
+
+#editor-app ::-webkit-scrollbar-thumb:hover {
+  background: #655d72;
+  background-clip: padding-box;
+}
+
+@media (min-width: 1500px) {
+#editor-app #right-panel {
+  width: 292px;
+    flex-basis: 292px;
+}
+}
+
+@media (max-width: 1100px) {
+#editor-app #right-panel {
+  width: 248px;
+    min-width: 220px;
+    flex-basis: 248px;
+}
+
+#editor-app #topbar {
+  padding: 0 10px;
+}
+}
+
+@media (max-width: 800px) {
+#editor-app #topbar {
+  gap: 5px;
+}
+
+#editor-app #right-panel {
+  width: 220px;
+    min-width: 200px;
+    flex-basis: 220px;
+}
+}
+
+@media (max-width: 560px) {
+#editor-app {
+  min-height: 320px;
+}
+
+#editor-app #topbar {
+  min-height: 48px;
+    height: 48px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+#editor-app #topbar::-webkit-scrollbar {
+  display: none;
+}
+
+#editor-app #left-toolbar {
+  width: 43px;
+    flex-basis: 43px;
+    gap: 6px;
+    padding: 9px 0;
+}
+
+#editor-app #body {
+  position: relative;
+}
+
+#editor-app #right-panel {
+  position: absolute;
+    z-index: 8;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: min(340px, calc(100vw - 52px));
+    min-width: 0;
+    flex: 0 0 auto;
+    border-left: 1px solid #454151;
+    box-shadow: -14px 0 36px rgba(0, 0, 0, 0.35);
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 180ms ease, visibility 180ms ease;
+}
+
+#editor-app #right-panel.is-open {
+  transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#editor-app #status-bar {
+  min-height: 25px;
+    height: 25px;
+    flex-basis: 25px;
+    padding: 0 8px;
+    font-size: 9px;
+}
+}
+
+@media (max-width: 800px) {
+#editor-app #topbar {
+  height: auto;
+    min-height: 54px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 7px 10px;
+    overflow: visible;
+}
+
+#editor-app #body {
+  position: relative;
+    min-width: 0;
+}
+
+#editor-app #right-panel {
+  position: absolute;
+    z-index: 8;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(340px, calc(100vw - 54px));
+    min-width: 0;
+    flex: 0 0 auto;
+    border-left: 1px solid #454151;
+    box-shadow: -14px 0 36px rgba(0, 0, 0, 0.35);
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 180ms ease, visibility 180ms ease;
+}
+
+#editor-app #right-panel.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#editor-app #viewport {
+  min-width: 0;
+    touch-action: manipulation;
+}
+}
+
+@media (max-width: 560px) {
+#editor-app #topbar {
+  min-height: 0;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 7px;
+  padding: 7px 6px;
+  overflow: visible;
+}
+
+#editor-app #left-toolbar {
+  width: 43px;
+  flex-basis: 43px;
+  gap: 6px;
+  padding: 9px 0;
+}
+
+#editor-app #right-panel {
+  width: min(340px, calc(100vw - 52px));
+}
+
+#editor-app #status-bar {
+  min-height: 25px;
+  height: 25px;
+  flex-basis: 25px;
+  padding: 0 8px;
+  font-size: 9px;
+}
+}
+
+@media (max-width: 360px) {
+#editor-app #topbar {
+  gap: 5px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+#editor-app #right-panel {
+  width: calc(100vw - 48px);
+}
+}
+
+#editor-app,
+#editor-app #body,
+#editor-app #workspace,
+#editor-app #viewport {
+  min-width: 0;
+}
+
+#editor-app #viewport {
+  background-color: #ffffff;
+  background-image: linear-gradient(rgba(31, 41, 55, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(31, 41, 55, 0.045) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center center;
+}
+
+#editor-app #canvas {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#editor-app #canvas * {
+  vector-effect: non-scaling-stroke;
+}
+
+@media (max-width: 800px) {
+#editor-app {
+  height: 100dvh;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+#editor-app #topbar {
+  flex: 0 0 auto;
+    max-width: 100%;
+}
+
+#editor-app #body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#editor-app #workspace {
+  flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+#editor-app #viewport {
+  flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+    touch-action: none;
+    overscroll-behavior: contain;
+}
+
+#editor-app #right-panel {
+  display: flex;
+    width: min(360px, calc(100vw - 54px));
+    max-width: calc(100vw - 54px);
+    min-width: 0;
+    height: 100%;
+    max-height: 100%;
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 30;
+}
+
+#editor-app #right-panel.is-open {
+  transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+}
+
+@media (max-width: 560px) {
+#editor-app {
+  min-height: 360px;
+}
+
+#editor-app #topbar {
+  display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    padding: 6px;
+    max-height: 116px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#editor-app #left-toolbar {
+  flex: 0 0 42px;
+    width: 42px;
+}
+
+#editor-app #status-bar {
+  flex: 0 0 25px;
+}
+}
+
+@media (max-width: 360px) {
+#editor-app #topbar {
+  max-height: 128px;
+}
+
+#editor-app #right-panel {
+  width: calc(100vw - 48px);
+    max-width: calc(100vw - 48px);
+}
+}
+
+#editor-app #topbar {
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid #2d2b38;
+  box-shadow: 0 4px 18px rgba(8, 8, 14, 0.12);
+}
+
+#editor-app #right-panel {
+  min-width: 0;
+  overflow: hidden;
+  background: #17161f;
+}
+
+@media (min-width: 561px) and (max-width: 800px) {
+#editor-app #topbar {
+  display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+    padding: 9px 12px;
+}
+
+#editor-app #right-panel {
+  width: min(390px, calc(100vw - 60px));
+    max-width: calc(100vw - 60px);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: -18px 0 48px rgba(0, 0, 0, 0.38);
+}
+}
+
+@media (max-width: 560px) {
+#editor-app #topbar {
+  display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    padding: 7px 8px;
+    max-height: 104px;
+    overflow: hidden;
+    background: rgba(20, 19, 28, 0.98);
+}
+
+#editor-app #left-toolbar {
+  width: 46px;
+    flex-basis: 46px;
+    padding: 8px 0;
+    gap: 7px;
+}
+
+#editor-app #right-panel {
+  position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: min(360px, calc(100vw - 68px));
+    max-width: calc(100vw - 68px);
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+    background: #17161f;
+    overflow: hidden;
+    transform: translateX(calc(100% + 20px));
+    transition: transform 220ms cubic-bezier(0.2, 0.75, 0.25, 1), visibility 220ms ease;
+}
+
+#editor-app #right-panel.is-open {
+  transform: translateX(0);
+}
+
+#editor-app #right-panel {
+  flex-direction: column;
+}
+
+#editor-app #status-bar {
+  padding: 0 9px;
+    font-size: 10px;
+}
+}
+
+@media (max-width: 360px) {
+#editor-app #topbar {
+  padding-right: 5px;
+    padding-left: 5px;
+}
+
+#editor-app #right-panel {
+  right: 5px;
+    width: calc(100vw - 56px);
+    max-width: calc(100vw - 56px);
+}
+}
+
+#editor-app #right-panel {
+  width: 292px;
+  min-width: 260px;
+  flex-basis: 292px;
+  background: linear-gradient(180deg, #1d1c25 0%, #191820 100%);
+  border-left-color: rgba(255, 255, 255, 0.09);
+}
+
+@media (max-width: 800px) {
+#editor-app #right-panel {
+  width: min(380px, calc(100vw - 58px));
+    min-width: 0;
+    flex-basis: auto;
+}
+}
+
+@media (max-width: 560px) {
+#editor-app #right-panel {
+  width: min(360px, calc(100vw - 54px));
+    max-width: calc(100vw - 54px);
+    max-height: calc(100dvh - 132px);
+    border-radius: 14px;
+}
+}

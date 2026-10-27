@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101014" id="theme-color-meta" />
+  <meta name="description" content="Figma-Lite Studio — a creative workspace for designing, editing, and bringing ideas to life." />
+  <title>Figma-Lite Studio — Design Without Limits</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+  <div id="app">
+    <section id="welcome-screen" class="welcome-screen">
+      <nav class="welcome-nav" aria-label="Main navigation">
+        <a href="#" class="brand" aria-label="Figma-Lite Studio home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="3" y="3" width="11" height="11" rx="3" fill="currentColor" />
+              <rect x="18" y="3" width="11" height="11" rx="3" fill="currentColor" opacity=".65" />
+              <rect x="3" y="18" width="11" height="11" rx="3" fill="currentColor" opacity=".65" />
+              <circle cx="23.5" cy="23.5" r="5.5" fill="currentColor" />
+            </svg>
+          </span>
+          <span>Figma-Lite<span class="brand-light"> Studio</span></span>
+        </a>
+
+        <div class="welcome-nav-links">
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#workflow" class="nav-link">How it works</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" title="Switch to light mode">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke-linecap="round"/></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.7 8.7 0 1 0 20.2 15.4Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="button button-primary nav-cta" id="nav-start-btn" type="button"> Open editor <span aria-hidden="true">↗</span> </button>
+        </div>
+      </nav>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"> <span class="eyebrow-dot"></span> YOUR IDEAS. BEAUTIFULLY BUILT. </div>
+            <h1 id="hero-title"><span class="hero-title-first">Think it. <span class="hero-gradient">Shape it.</span></span><span class="hero-title-second">Make it real.</span></h1>
+            <p class="hero-description"> A focused creative space for turning simple ideas into thoughtful designs. Create, arrange, refine, and export — all in one place. </p>
+
+            <div class="hero-actions">
+              <button class="button button-primary button-large" id="start-designing-btn" type="button">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" /> </svg>
+                Start designing
+                <span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+              <a href="#features" class="button button-secondary button-large"> Explore features </a>
+            </div>
+
+            <div class="hero-footnote">
+              <span class="status-indicator"></span>
+              <span>Runs in your browser</span>
+              <span class="footnote-divider">·</span>
+              <span>Built for creative freedom</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="features-section" aria-labelledby="features-title">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">A BETTER CREATIVE FLOW</span>
+              <h2 id="features-title">Everything you need to create.</h2>
+            </div>
+            <p>Powerful essentials, thoughtfully brought together.</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-purple" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.7" />
+                  <circle cx="17" cy="7" r="4" stroke="currentColor" stroke-width="1.7" />
+                  <path d="M3 16h8v5H3zM15 14l6 7h-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Shapes & typography</h3>
+              <p>Build compositions with rectangles, ellipses, lines, and editable text.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-blue" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Precise control</h3>
+              <p>Arrange elements, adjust properties, and refine your canvas with care.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-green" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3>Save & export</h3>
+              <p>Keep your projects and export your designs into useful formats.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon feature-icon-orange" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 12a9 9 0 1 0 3-6.7L3 8m0-5v5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3>Undo & redo</h3>
+              <p>Experiment freely with a history-driven workflow for your edits.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="workflow" class="workflow-section">
+          <div class="workflow-copy">
+            <span class="section-kicker">LESS FRICTION, MORE CREATIVITY</span>
+            <h2>Your next idea starts with a blank canvas.</h2>
+            <p> Choose a tool, bring your elements together, and make every adjustment count. Your workspace is ready when inspiration strikes. </p>
+            <button class="button button-primary" id="workflow-start-btn" type="button"> Create your first design <span aria-hidden="true">→</span> </button>
+          </div>
+          <div class="workflow-steps">
+            <div class="workflow-step">
+              <span class="step-number">01</span>
+              <div><h3>Create</h3><p>Add shapes, lines, and text to your canvas.</p></div>
+            </div>
+            <div class="workflow-step">
+              <span class="step-number">02</span>
+              <div><h3>Refine</h3><p>Arrange, transform, and customize your elements.</p></div>
+            </div>
+            <div class="workflow-step">
+              <span class="step-number">03</span>
+              <div><h3>Export</h3><p>Save your project and export your finished design.</p></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="welcome-footer">
+        <a href="#" class="footer-brand">Figma-Lite Studio</a>
+        <span>A small space for big ideas.</span>
+        <span>Built with HTML, CSS & JavaScript</span>
+      </footer>
+    </section>
+
+    <div id="editor-app" hidden>
+      <header id="topbar">
+        <div class="topbar-left">
+          <a class="logo editor-brand" href="#" id="editor-home-btn" aria-label="Return to welcome screen">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/>
+              <path d="M3 14h7v7H3z"/><path d="M14 14h7v7h-7z"/>
+            </svg>
+            <span>Figma-Lite <span class="editor-brand-suffix">Studio</span></span>
+          </a>
+
+          <div class="divider"></div>
+
+          <button class="tool-btn" data-tool="select" data-shortcut="V" title="Select (V)" aria-label="Select tool">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l7.5 18 2.5-8 8-2.5z"/></svg>
+          </button>
+          <button class="tool-btn" data-tool="rectangle" data-shortcut="R" title="Rectangle (R)" aria-label="Rectangle tool">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/></svg>
+          </button>
+          <button class="tool-btn" data-tool="ellipse" data-shortcut="O" title="Ellipse (O)" aria-label="Ellipse tool">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+          </button>
+          <button class="tool-btn" data-tool="text" data-shortcut="T" title="Text (T)" aria-label="Text tool">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16M4 4v3M20 4v3M12 4v16M9 20h6"/></svg>
+          </button>
+          <button class="tool-btn" data-tool="line" data-shortcut="L" title="Line (L)" aria-label="Line tool">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="20" x2="20" y2="4"/></svg>
+          </button>
+        </div>
+
+        <div class="topbar-center">
+          <button class="icon-btn" id="undo-btn" title="Undo (Ctrl+Z)" aria-label="Undo" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 015 5v0a5 5 0 01-5 5H9"/></svg>
+          </button>
+          <button class="icon-btn" id="redo-btn" title="Redo (Ctrl+Shift+Z)" aria-label="Redo" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 14l5-5-5-5"/><path d="M20 9H9a5 5 0 00-5 5v0a5 5 0 005 5h6"/></svg>
+          </button>
+        </div>
+
+        <div class="topbar-right">
+          <div class="zoom-controls">
+            <button class="icon-btn" id="zoom-out-btn" title="Zoom out" aria-label="Zoom out">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="21" y1="21" x2="16" y2="16"/></svg>
+            </button>
+            <span id="zoom-display" class="zoom-display">100%</span>
+            <button class="icon-btn" id="zoom-in-btn" title="Zoom in" aria-label="Zoom in">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="21" y1="21" x2="16" y2="16"/></svg>
+            </button>
+            <button class="icon-btn" id="fit-btn" title="Fit to screen (Shift+1)" aria-label="Fit to screen">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            </button>
+          </div>
+
+          <div class="divider"></div>
+
+          <button class="toggle-btn" id="grid-btn" title="Toggle grid" aria-label="Toggle grid" data-active="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+          </button>
+          <button class="toggle-btn" id="snap-btn" title="Toggle snapping" aria-label="Toggle snap" data-active="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+
+          <div class="divider"></div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode" title="Switch to light mode">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke-linecap="round"/></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.7 8.7 0 1 0 20.2 15.4Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="text-btn" id="export-btn" title="Export design" aria-label="Export">Export</button>
+          <button class="text-btn" id="save-btn" title="Save project" aria-label="Save project">Save</button>
+          <button class="text-btn" id="load-btn" title="Load project" aria-label="Load project">Load</button>
+        </div>
+      </header>
+
+      <div id="body">
+        <aside id="left-toolbar" aria-label="Design tools">
+          <button class="side-tool-btn" data-tool="select" data-shortcut="V" title="Select (V)" aria-label="Select tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l7.5 18 2.5-8 8-2.5z"/></svg>
+          </button>
+          <button class="side-tool-btn" data-tool="frame" data-shortcut="F" title="Frame (F)" aria-label="Frame tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 8h18"/></svg>
+          </button>
+          <button class="side-tool-btn" data-tool="rectangle" data-shortcut="R" title="Rectangle (R)" aria-label="Rectangle tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/></svg>
+          </button>
+          <button class="side-tool-btn" data-tool="ellipse" data-shortcut="O" title="Ellipse (O)" aria-label="Ellipse tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+          </button>
+          <button class="side-tool-btn" data-tool="line" data-shortcut="L" title="Line (L)" aria-label="Line tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="20" x2="20" y2="4"/></svg>
+          </button>
+          <button class="side-tool-btn" data-tool="freeform" data-shortcut="P" title="Freeform drawing (P)" aria-label="Freeform drawing tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17c3-9 5 5 8-3s5-8 10-7"/></svg>
+          </button>
+          <button class="side-tool-btn" data-tool="text" data-shortcut="T" title="Text (T)" aria-label="Text tool">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16M4 4v3M20 4v3M12 4v16M9 20h6"/></svg>
+          </button>
+          <div class="toolbar-spacer" aria-hidden="true"></div>
+          <button class="side-tool-btn inspector-toggle" id="inspector-toggle-btn" type="button" title="Show properties and layers" aria-label="Show properties and layers" aria-expanded="false" aria-controls="right-panel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M14 4v16M6 8h5M6 12h5M6 16h5"/></svg>
+          </button>
+        </aside>
+
+        <main id="workspace" aria-label="Design canvas">
+          <div id="viewport" aria-label="Design workspace. Use the toolbar to choose a tool and drag on the white canvas to draw.">
+            <svg id="canvas" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Design canvas">
+              <defs id="canvas-defs"></defs>
+              <g id="grid-layer"></g>
+              <g id="content-layer"></g>
+              <g id="guides-layer"></g>
+              <g id="overlay-layer"></g>
+            </svg>
+
+            <div id="empty-state" class="empty-state">
+              <div class="empty-state-content">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/>
+                  <path d="M3 14h7v7H3z"/><path d="M14 14h7v7h-7z"/>
+                </svg>
+                <h2>Start creating</h2>
+                <p>Choose a tool or use a keyboard shortcut to add your first element.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="status-bar">
+            <span id="status-info" role="status" aria-live="polite">Ready</span>
+          </div>
+        </main>
+
+        <!-- Right Panel -->
+        <aside id="right-panel" aria-label="Design inspector" aria-hidden="true">
+          <div id="properties-panel" class="panel inspector-section">
+            <div class="panel-header inspector-panel-header">
+              <div class="panel-heading-group">
+                <span class="panel-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h9M17 7h3M4 17h3M11 17h9" stroke-linecap="round"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span>
+                <div class="panel-heading-copy"><h3>Properties</h3><span class="panel-subtitle">Selected object</span></div>
+              </div>
+              <span class="panel-heading-status" aria-hidden="true">EDIT</span>
+            </div>
+            <div id="properties-content" class="panel-content">
+              <p class="panel-empty">Select an element to inspect its properties.</p>
+            </div>
+          </div>
+
+          <div id="layers-panel" class="panel inspector-section">
+            <div class="panel-header inspector-panel-header">
+              <div class="panel-heading-group">
+                <span class="panel-heading-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 8 4-8 4-8-4 8-4Z" stroke-linejoin="round"/><path d="m4 12 8 4 8-4M4 17l8 4 8-4" stroke-linejoin="round"/></svg></span>
+                <div class="panel-heading-copy"><h3>Layers</h3><span class="panel-subtitle">Document structure</span></div>
+              </div>
+              <div class="layer-actions">
+                <button class="tiny-btn" id="bring-front-btn" title="Bring to front" aria-label="Bring to front" disabled>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="13" height="13" rx="1"/><path d="M8 21h13V8"/></svg>
+                </button>
+                <button class="tiny-btn" id="send-back-btn" title="Send to back" aria-label="Send to back" disabled>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="8" width="13" height="13" rx="1"/><path d="M3 16V3h13"/></svg>
+                </button>
+                <button class="tiny-btn" id="duplicate-layer-btn" title="Duplicate" aria-label="Duplicate layer" disabled>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="12" height="12" rx="1"/><rect x="8" y="8" width="12" height="12" rx="1"/></svg>
+                </button>
+                <button class="tiny-btn danger" id="delete-layer-btn" title="Delete" aria-label="Delete layer" disabled>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>
+                </button>
+              </div>
+            </div>
+            <div id="layers-list" class="panel-content layers-list"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div id="export-dialog" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="export-dialog-title">
+      <div class="modal-header">
+        <h3 id="export-dialog-title">Export design</h3>
+        <button class="icon-btn" id="export-close-btn" aria-label="Close export dialog" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-row">
+          <label for="export-format">Format</label>
+          <select id="export-format">
+            <option value="svg">SVG</option>
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+          </select>
+        </div>
+        <div class="form-row" id="scale-row">
+          <label for="export-scale">Scale</label>
+          <select id="export-scale">
+            <option value="1">1×</option>
+            <option value="2">2×</option>
+            <option value="3">3×</option>
+          </select>
+        </div>
+        <div class="form-row" id="quality-row" hidden>
+          <label for="export-quality">Quality</label>
+          <input type="range" id="export-quality" min="0.1" max="1" step="0.05" value="0.9" />
+          <span id="quality-display">90%</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="text-btn" id="export-cancel-btn" type="button">Cancel</button>
+        <button class="text-btn primary" id="export-confirm-btn" type="button">Export</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="load-file-input" accept=".json,application/json" hidden />
+  <input type="text" id="text-edit-input" class="text-edit-input" aria-label="Edit text" hidden />
+  <script type="module" src="app.js"></script>
+</body>
+</html>
